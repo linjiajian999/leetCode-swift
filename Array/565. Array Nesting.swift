@@ -1,4 +1,3 @@
-//: Playground - noun: a place where people can play
 class Solution {
     func arrayNesting(_ nums: [Int]) -> Int {
         var res = 0
@@ -9,9 +8,7 @@ class Solution {
             }
             var index = nums[i]
             var count = 0
-            var tem = 0
             while tags[index] != -1 {
-                tem = index
                 tags[index] = -1
                 index = nums[index]
                 count += 1

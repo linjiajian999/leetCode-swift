@@ -1,4 +1,3 @@
-//: Playground - noun: a place where people can play
 class Solution {
     func maximumProduct(_ nums: [Int]) -> Int {
         var max1: Int = Int.min

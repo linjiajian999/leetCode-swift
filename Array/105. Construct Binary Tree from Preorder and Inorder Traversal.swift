@@ -6,9 +6,9 @@ public class TreeNode {
     public var right: TreeNode?
     public init(_ val: Int) {
         self.val = val
-         self.left = nil
-         self.right = nil
-     }
+        self.left = nil
+        self.right = nil
+    }
 }
 class Solution1 {
     func buildTree(_ preorder: [Int], _ inorder: [Int]) -> TreeNode? {
@@ -27,27 +27,27 @@ class Solution1 {
             inorderEndIndex: inorder.count - 1,
             rootValueToIndex: rootValueToIndex)
     }
-
+    
     func buildTree(
-            preorder: [Int],
-            preorderStartIndex: Int,
-            preorderEndIndex: Int,
-            inorder: [Int],
-            inorderStartIndex: Int,
-            inorderEndIndex: Int,
-            rootValueToIndex: [Int:Int]
+        preorder: [Int],
+        preorderStartIndex: Int,
+        preorderEndIndex: Int,
+        inorder: [Int],
+        inorderStartIndex: Int,
+        inorderEndIndex: Int,
+        rootValueToIndex: [Int:Int]
         ) -> TreeNode? {
         guard preorderStartIndex <= preorderEndIndex else {
             return nil
         }
-
+        
         let rootValue = preorder[preorderStartIndex]
         guard let inorderRootIndex = rootValueToIndex[rootValue] else {
             assertionFailure("invalid logic: couldn't' find root value")
             return nil
         }
         let leftLength = (inorderRootIndex - inorderStartIndex)
-
+        
         let root = TreeNode(rootValue)
         root.left = buildTree(
             preorder: preorder,
@@ -57,7 +57,7 @@ class Solution1 {
             inorderStartIndex: inorderStartIndex,
             inorderEndIndex: inorderStartIndex + leftLength - 1,
             rootValueToIndex: rootValueToIndex)
-
+        
         root.right = buildTree(
             preorder: preorder,
             preorderStartIndex: preorderStartIndex + leftLength + 1,
@@ -90,7 +90,7 @@ class Solution {
         inStart: Int,
         inEnd: Int,
         inorderMap: [Int: Int]
-    ) -> TreeNode? {
+        ) -> TreeNode? {
         guard preStart <= preorder.count - 1 && inStart <= inEnd else {
             return nil
         }

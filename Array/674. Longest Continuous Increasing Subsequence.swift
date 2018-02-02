@@ -1,5 +1,3 @@
-//: Playground - noun: a place where people can play
-
 class Solution {
     func findLengthOfLCIS(_ nums: [Int]) -> Int {
         if (nums.count < 2) {
@@ -18,5 +16,6 @@ class Solution {
         return preMax
     }
 }
-var a = Solution()
-print(a.findLengthOfLCIS([1, 2, 3, 4]))
+var testcase = [1, 2, 3, 4]
+var solution = Solution()
+solution.findLengthOfLCIS(testcase)
