@@ -1,5 +1,4 @@
 class Solution {
-    
     func arrayPairSum(_ nums: [Int]) -> Int {
         var res : Int = 0
         let sortnums: [Int] = nums.sorted()
