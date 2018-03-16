@@ -1,2 +1,2 @@
 # leetCode-swift
-answer for leetcode with swift
+answer the leetcode with swift
